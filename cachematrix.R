@@ -5,7 +5,26 @@
 ## that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
+      inv <- NULL  #inv will store the inverse of our matrix initially 
+                  #set to NULL until called upon by cacheMatrix
 
+      set <- function(y) {    #set function to reset inv to NULL when
+            x <<- y           #called
+            inv <<- NULL
+      }
+      
+      get <- function() x     #returns the initial matrix
+      
+      setInv <- function(solve) inv <<- solve #function to set the inverse
+                  #of x when called by cacheSolve and store the value
+      
+      getInv <- function() inv #retireves the value of inv on subsequent 
+                              #calls by cacheSolve
+      
+      list(set = set, get = get,  
+           setInv = setInv,
+           getInv = getInv) #creates a list for calling function to access
+                              #internal makeCacheMatrix
 }
 
 
