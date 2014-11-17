@@ -39,6 +39,7 @@ cacheSolve <- function(x, ...) {
             message("Fetching previously cached inverted matrix.")  
             return(inv)       #inverse of the matrix 'x'
       }
+      message("Calculating inverse. Please hold.")
       data <- x$get()   #if inv == NULL then retrieve uninverted matrix
       inv <- solve(data, ...) #invert the matrix
       x$setInv(inv)     #set the value of inv == inverted matrix
