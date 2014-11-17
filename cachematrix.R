@@ -24,7 +24,7 @@ makeCacheMatrix <- function(x = matrix()) {
       list(set = set, get = get,  
            setInv = setInv,
            getInv = getInv) #creates a list for calling function to access
-                              #internal makeCacheMatrix
+                              #internal function in makeCacheMatrix
 }
 
 
